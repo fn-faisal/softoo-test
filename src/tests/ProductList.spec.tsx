@@ -19,7 +19,6 @@ describe('Product List', () => {
     test('Product list to be empty initially', async () => {
         render(<HomeScreen />);
         
-        // initially, the preview should be empty initially.
         const component = screen.getByTestId('product-container');
         expect(component).toBeEmptyDOMElement();
     });
@@ -27,7 +26,6 @@ describe('Product List', () => {
     test('Products loader show on page load', async () => {
         render(<HomeScreen />);
         
-        // initially, the preview should be empty initially.
         const component = screen.getByTestId('loader');
         expect(component).toBeInTheDocument();
     });

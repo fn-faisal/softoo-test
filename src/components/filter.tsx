@@ -17,10 +17,10 @@ export const Filter: React.FC<FilterProps> = ({ colours, onColourChanged }) => {
                     <a>clear all</a>
                 </small>
             </label>
-            <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+            <ul data-testid="fc-container" tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
                 {
                     [...new Set(colours)].map(
-                        colour => <li key={colour} onClick={() => onColourChanged && onColourChanged(colour || '')}><a href='#'>{colour}</a></li>
+                        colour => <li key={colour} onClick={() => onColourChanged && onColourChanged(colour || '')}><a href='#' data-testid={`fc-${colour}`} >{colour}</a></li>
                     )
                 }
             </ul>

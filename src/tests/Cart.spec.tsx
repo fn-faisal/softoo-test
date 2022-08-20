@@ -1,9 +1,8 @@
-import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import HomeScreen from '../pages/HomeScreen';
 import {rest} from 'msw'
 import {setupServer} from 'msw/node';
 import mockData from './mock.json';
-import { wait } from '@testing-library/user-event/dist/utils';
 
 const server = setupServer(
     rest.get(`${process.env.REACT_APP_API_URL}/benirvingplt/products/products`, (req, res, ctx) => {
@@ -19,7 +18,6 @@ describe('Cart', () => {
     test('Initially total is 0', async () => {
         render(<HomeScreen />);
         
-        // initially, the preview should be empty initially.
         const component = screen.getByTestId('cart-total');
         expect(component).toHaveTextContent('$ 0.00');
     });
