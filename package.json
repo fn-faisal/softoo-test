@@ -21,8 +21,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "concurrently \"npm run mock:server\"  \"react-scripts test\"",
+    "eject": "react-scripts eject",
+    "mock:server": "json-server ./src/tests/mock.json --port 8080"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +45,9 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
+    "concurrently": "^7.3.0",
+    "json-server": "^0.17.0",
+    "msw": "^0.44.2",
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.8"
   }

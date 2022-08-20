@@ -51,8 +51,9 @@ export default function HomeScreen() {
             <div className="mt-4">
                 {
                     loading === true &&
-                    <progress className="progress w-full my-8"></progress>
+                    <progress data-testid="loader" className="progress w-full my-8"></progress>
                 }
+                <div data-testid="product-container">
                 {
                     products.map(
                         ( product ) => <ProductCard 
@@ -63,13 +64,13 @@ export default function HomeScreen() {
                             key={product.id} product={product} />
                     )
                 }
-
+                </div>
                 <div className="card flex my-4 flex-row w-[80%] bg-base-100">
                     <div className="px-1 flex-1"></div>
                     <div className="flex-2"></div>
                     <div className="flex-2 w-24 flex flex-col text-center items-center text-xl justify-center">
                         <hr className="w-full border-black" />
-                        <h5 className="text-xl mt-1">
+                        <h5 className="text-xl mt-1" data-testid="cart-total">
                             $ {total.toFixed(2)}
                         </h5>
                     </div>
