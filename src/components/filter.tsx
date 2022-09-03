@@ -11,13 +11,13 @@ export const Filter: React.FC<FilterProps> = ({ colours, onColourChanged, active
     return (
         <div className="dropdown">
             <div className="flex flex-row items-center">
-                <label  role="button" tabIndex={0} className="m-1 flex flex-row items-center">
+                <label  role="button" tabIndex={0} className="m-1 flex flex-row items-center text-primary">
                     <p> Colour Filter  </p>
                     <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
                 </label>
-                <small className="underline ml-4" role="button" onClick={() => onColourChanged && onColourChanged()}>
+                <small className="underline ml-4 text-muted" role="button" onClick={() => onColourChanged && onColourChanged()}>
                     <a>clear all</a>
                 </small>
             </div>
