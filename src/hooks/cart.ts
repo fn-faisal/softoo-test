@@ -10,10 +10,9 @@ export const useCart = (): [number, (product: Product) => void, (product: Produc
     }, [cartProducts])
 
     const updateTotal = ( products: Array<{ product: Product, qty: number }> ) => {
-        let newTotal = 0;
-        products.map( p => {
-            newTotal += p.qty * ( p.product.price || 0 );
-        } );
+        let newTotal =  products.reduce((t: number, curr: any) => {
+            return t + curr.qty * ( curr.product.price || 0 )
+        }, 0);
         setCartTotal(newTotal);
     }
 
