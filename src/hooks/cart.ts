@@ -69,7 +69,7 @@ export const useCart = (): [number, (product: Product) => void, (product: Produc
                     return p;
                 });
             } else if ( inCart && inCart.qty <= 0 ) {
-                cartProductsTemp = cartProducts.filter( p => p.product.id === product.id );
+                cartProductsTemp = cartProducts.filter( p => p.product.id !== product.id );
             }
             setCartProducts( cartProductsTemp );
         },
