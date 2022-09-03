@@ -29,7 +29,7 @@ export const removeItem = (cartProducts: any, product: Product) => {
             return p;
         });
     } else if ( inCart && inCart.qty <= 0 ) {
-        cartProductsTemp = cartProducts.filter( (p: any) => p.product.id === product.id );
+        cartProductsTemp = cartProducts.filter( (p: any) => p.product.id !== product.id );
     }
     return cartProductsTemp;
 }
