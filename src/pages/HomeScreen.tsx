@@ -9,7 +9,8 @@ export default function HomeScreen() {
     const [ products, setProducts ] = useState<Array<Product>>([]);
     const [ loading, setLoading ] = useState(false);
     const [ colours, setColours ] = useState<any>([]);
-    
+    const [ activeFilter, setActiveFilter ] = useState<string | undefined>();
+
     /**
      * Using a hook to store cart.
      * would work well for this app as there's only one page but for 
@@ -45,7 +46,8 @@ export default function HomeScreen() {
         <div className="flex flex-col p-10">
             <div className="flex flex-row">
                 <Filter 
-                    onColourChanged={( colour ) => loadProduct(colour)}
+                    activeFilter={activeFilter}
+                    onColourChanged={( colour ) => loadProduct(colour).then(() => setActiveFilter(colour))}
                     colours={colours} />
             </div>
             <div className="mt-4">
