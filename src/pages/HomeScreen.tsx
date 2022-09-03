@@ -47,7 +47,11 @@ export default function HomeScreen() {
             <div className="flex flex-row">
                 <Filter 
                     activeFilter={activeFilter}
-                    onColourChanged={( colour ) => loadProduct(colour).then(() => setActiveFilter(colour))}
+                    onColourChanged={( colour ) => {
+                        if ( colour === activeFilter ) return;
+                        loadProduct(colour)
+                            .then(() => setActiveFilter(colour));
+                    }}
                     colours={colours} />
             </div>
             <div className="mt-4">
