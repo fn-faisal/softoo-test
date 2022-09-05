@@ -71,7 +71,7 @@ export default function HomeScreen() {
                     )
                 }
                 </div>
-                <div className="card flex my-4 flex-row w-[80%] bg-base-100">
+                <div className="card flex my-4 flex-row w-[60%] bg-base-100">
                     <div className="px-1 flex-1"></div>
                     <div className="flex-2"></div>
                     <div className="flex-2 w-24 flex flex-col text-center items-center text-xl justify-center">
