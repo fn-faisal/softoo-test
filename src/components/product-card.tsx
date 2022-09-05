@@ -13,7 +13,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, qty = 0, onAd
     return (
         <div data-testid={`${product.id}-product`} className="card flex my-4 flex-row w-[60%] bg-base-100">
             <span hidden>{product.colour}</span>
-            <div className="px-1 flex-1 flex justify-start items-start min-w-[200px] max-w-[200px]">
+            <div className="px-1 flex-1 flex justify-end items-start min-w-[200px] max-w-[200px]">
                 <img src={product.img} alt={product.name} className="rounded-md h-24 w-24 object-cover" />
             </div>
             <div className="flex-2 card-body pt-0 items-start text-start">
