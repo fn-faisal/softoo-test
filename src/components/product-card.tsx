@@ -17,14 +17,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, qty = 0, onAd
                 <img src={product.img} alt={product.name} className="rounded-md h-24 w-24 object-cover" />
             </div>
             <div className="flex-2 card-body pt-0 items-start text-start">
-                <div className="text-right">
+                <div className="text-rightd">
                     <h2 className="card-title text-muted">{product.name}</h2>
                     <p className='text-primary'>$ {product.price}</p>
                 </div>
             </div>
             <div className="flex-2 flex flex-row">
                 <div data-testid={`${product.id}-product-delete`} className="flex-1 items-center flex justify-center mr-4 text-muted" onClick={onDeleteFromCart}>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="border border-muted rounded-full h-6 w-6 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M18 12H6" />
                     </svg>
                 </div>
@@ -33,7 +33,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, qty = 0, onAd
                     <a href="#" data-testid={`${product.id}-product-remove`} className="link text-xs text-primary" onClick={onRemoveFromCart}><small>Remove</small></a>
                 </div>
                 <div data-testid={`${product.id}-product-add`} className="flex-1 items-center flex justify-center ml-4 text-muted" onClick={onAddToCart}> 
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="border border-muted rounded-full h-6 w-6 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
                 </div>
